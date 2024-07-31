@@ -86,6 +86,7 @@
                 display: block;
 
                 &:hover{
+                    cursor: pointer;
                     color: $secondary;
                 }
             }

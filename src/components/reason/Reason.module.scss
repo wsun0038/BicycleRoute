@@ -1,0 +1,53 @@
+@import '../../styles/contants.scss';
+
+.wrapper {
+    background-color: white;
+
+    .container {
+        align-items: flex-start;
+        gap: 2rem;
+        flex-wrap: wrap;
+        >div {
+            flex:1;
+        }
+
+        .leftside{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 4rem;
+        }
+
+        .rightside{
+            @media (max-width: $sm) {
+                text-align: center;
+            }
+            padding:4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .title{
+                @media (max-width: $sm) {
+                    font-size: 2.5rem;
+                  }
+                  top:5%;
+                  font-size: 3rem;
+                  font-weight: bold;
+                  text-align: center;
+            }
+
+            .lastline{
+                @media (max-width: $sm) {
+                    font-size: 1.1rem;
+                    line-height: 40px;
+                  }
+                  line-height: 50px;
+                  font-size: 1.3rem;
+                  font-weight: 500;
+                  font-weight: bold;
+                  
+            }
+        }
+    }
+}
