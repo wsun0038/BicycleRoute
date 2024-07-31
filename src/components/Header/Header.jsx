@@ -5,6 +5,7 @@ import {motion} from 'framer-motion'
 import {getMenuStyles, headerVariants} from '../../utils/motion'
 import useHeaderShadow from '../../hooks/useHeaderShadow'
 
+
 const Header = () => {
     
   const [menuOpened, setMenuOpened] = useState(false);
@@ -28,10 +29,9 @@ const Header = () => {
             <ul 
             style={getMenuStyles(menuOpened)}
             className={`flexCenter ${css.menu}`}>
-                <li><a href="">Insight</a></li>
-                <li><a href="">Route</a></li>
-                <li><a href="">Test</a></li>
-                <li><a href="">Test</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/insight">Insight</a></li>
+                <li><a href="/route">Route</a></li>
                 <li className={`flexCenter ${css.group}`}>
                     <p>TP39</p>
                     <BiCool size={"40Px"}/>
