@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import css from './Mapc.module.scss'
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
 import LoadSuburbTask from '../../tasks/LoadSuburbTask'
-import Loading from '../loading/loading'
+
 
 
 
@@ -29,7 +29,7 @@ const Mapc = () => {
         <section className={css.wrapper}>
 
             {
-                suburbs.length === 0 ? <Loading /> : <div className={css.container}>
+                suburbs.length === 0 ? <div>Loading...</div> : <div className={css.container}>
                     <MapContainer center={[-37.815, 144.953]} zoom={13} style={{ height: '80vh' }}>
                         <GeoJSON data={suburbs} 
                         onEachFeature = {onEachSuburb}

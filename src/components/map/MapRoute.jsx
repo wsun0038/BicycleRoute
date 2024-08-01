@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import css from './Mapc.module.scss'
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
-import Loading from '../loading/loading'
 import LoadRouteTask from '../../tasks/LoadRouteTask'
 
 const MapRoute = () => {
@@ -28,7 +27,7 @@ const MapRoute = () => {
 
 
             {
-                routes.length === 0 ? <Loading /> : <div className={css.container}>
+                routes.length === 0 ? <div>Loading...</div> : <div className={css.container}>
                     <MapContainer center={[-37.815, 144.953]} zoom={13} style={{ height: '80vh' }}>
                         <GeoJSON data={routes}
                             onEachFeature={onEachRoute}
