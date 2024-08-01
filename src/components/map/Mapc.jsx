@@ -8,6 +8,7 @@ import LoadSuburbTask from '../../tasks/LoadSuburbTask'
 
 const Mapc = () => {
     const [suburbs, setSuburbs] = useState([]);
+    const [selectedSuburb, setSelectedSuburb] = useState('');
 
     const load = () => {
         const loadSuburbTask = new LoadSuburbTask();
@@ -21,6 +22,9 @@ const Mapc = () => {
     const onEachSuburb = (suburb, layer) =>{
         //layer.options.fillColor = 
         const name = suburb.properties.vic_loca_2;
+        layer.on('click', () => {
+            setSelectedSuburb(name);
+        });
         layer.bindPopup(`${name}`)
     }
 
@@ -39,6 +43,9 @@ const Mapc = () => {
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
                     </MapContainer>
+                    <div>
+                        {selectedSuburb && <p>You clicked on: {selectedSuburb}</p>}
+                    </div>
                 </div>
             }
 
