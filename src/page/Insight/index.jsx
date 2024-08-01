@@ -4,7 +4,7 @@ import Mapc from "../../components/map/Mapc";
 import Reason from "../../components/reason/Reason";
 import css from "../../styles/app.module.scss" 
 const Insight = () => {
-  return <div className={`bg-primary ${css.container}`}>
+  return <div className={`backg-primary ${css.container}`}>
       <Header/>
       <Mapc />
   </div>;

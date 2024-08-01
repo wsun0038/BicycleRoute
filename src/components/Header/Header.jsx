@@ -33,7 +33,7 @@ const Header = () => {
                 <li><a href="/insight">Insight</a></li>
                 <li><a href="/route">Route</a></li>
                 <li className={`flexCenter ${css.group}`}>
-                    <p>TP39</p>
+                    <p></p>
                     <BiCool size={"40Px"}/>
                 </li>
             </ul>

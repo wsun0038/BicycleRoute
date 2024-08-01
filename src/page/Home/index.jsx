@@ -3,7 +3,7 @@ import Hero from "../../components/hero/Hero";
 import Reason from "../../components/reason/Reason";
 import css from "../../styles/app.module.scss" 
 const Home = () => {
-  return <div className={`bg-primary ${css.container}`}>
+  return <div className={`backg-primary ${css.container}`}>
       <Header/>
       <Hero/>
       <Reason/>
