@@ -2,6 +2,7 @@ import Home from '../page/Home'
 import Insight from '../page/Insight'
 
 import { createBrowserRouter } from 'react-router-dom'
+import Route from '../page/Route'
 
 const router = createBrowserRouter([
     {
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
     {
       path:'/',
       element: <Home />
+    },
+    {
+      path:'/route',
+      element: <Route />
     }
   ])
 
