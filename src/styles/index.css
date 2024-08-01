@@ -6,3 +6,10 @@
     font-family: "Eudoxus Sans", sans-serif;
   }
   
+#root{
+  height: 100vh;
+}
+
+.leaflet-container {
+  height:100vh;
+}
