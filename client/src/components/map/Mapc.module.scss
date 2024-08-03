@@ -1,0 +1,32 @@
+@import '../../styles/contants.scss';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css';
+
+.wrapper {
+    background-color: white;
+    .container{
+        position: relative;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 1%;
+
+        .chart {
+            width: 80%; /* Adjust the width as necessary */
+            height: 40vh; /* Adjust the height as necessary */
+            margin: auto; /* Center the chart */
+        }
+        
+    }
+
+    
+}
+
+.legend {
+    padding: 6px 8px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #bbb;
+    border-radius: 5px;
+}
+
+
+
