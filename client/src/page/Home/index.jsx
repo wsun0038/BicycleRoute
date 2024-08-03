@@ -8,7 +8,6 @@ const Home = () => {
       <Header/>
       <Hero/>
       <Reason/>
-      <TestComponent/>
   </div>;
 };
 

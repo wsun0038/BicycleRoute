@@ -36,4 +36,14 @@ router.get('/suburb/:name', async (req, res) => {
     }
 });
 
+router.get('/suburb_counts', async (req, res) => {
+    try {
+        const result = await client.query('SELECT suburb, lga_name, postcode_crash, count FROM suburb_accident_count');
+        res.json(result.rows);
+    } catch (err) {
+        console.error('Database query error:', err);
+        res.status(500).send('Server error');
+    }
+});
+
 module.exports = router;
