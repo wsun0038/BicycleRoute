@@ -46,4 +46,23 @@ router.get('/suburb_counts', async (req, res) => {
     }
 });
 
+router.get('/severity/:suburbName', async (req, res) => {
+    const suburbName = req.params.suburbName.toUpperCase(); // Ensure the suburb name is in uppercase for case-insensitive matching
+
+    try {
+        const query = 'SELECT severity, count FROM suburb_accident_severity_count WHERE upper(suburb) = $1';
+        const values = [suburbName];
+        const result = await client.query(query, values);
+        
+        if (result.rows.length === 0) {
+            res.status(404).send('No data found for the specified suburb');
+        } else {
+            res.json(result.rows);
+        }
+    } catch (err) {
+        console.error('Database query error:', err);
+        res.status(500).send('Server error');
+    }
+});
+
 module.exports = router;
