@@ -25,7 +25,7 @@ const Reason = () => {
                     <motion.span 
                     variants={fadeIn("right", "tween", 0.2,1)}
                     className={css.title}>
-                        Why we do This?
+                        Why we do this?
                     </motion.span>
 
                     <motion.span 
