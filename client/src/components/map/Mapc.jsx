@@ -6,6 +6,7 @@ import Chart from 'chart.js/auto';
 import LoadSuburbTask from '../../tasks/LoadSuburbTask'
 import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '../../utils/motion'
+import { Link } from 'react-router-dom';
 
 const Legend = () => {
     const map = useMap();
@@ -159,24 +160,24 @@ const Mapc = () => {
     };
 
     const barChartData = {
-        labels: ['Severity 1', 'Severity 2', 'Severity 3', 'Severity 4'],
+        labels: ['Fatal', 'Severe', 'Mild', 'Minor'],
         datasets: [
             {
                 label: 'Number of Accidents',
                 data: severityData.map(item => item.count),
                 backgroundColor: [
-                    'rgba(12, 92, 5, 0.2)',
-                    'rgba(255, 215, 0 , 0.2)',
-                    'rgba(227, 74, 51, 0.2)',
-                    'rgba(92, 16, 5, 0.2)'
+                    'rgba(92, 16, 5, 0.5)',
+                    'rgba(227, 74, 51, 0.5)',
+                    'rgba(255, 215, 0 , 0.5)',
+                    'rgba(12, 92, 5, 0.5)'
                 ],
                 borderColor: [
-                    'rgba(12, 92, 5, 1)',
-                    'rgba(255, 215, 0, 1)',
+                    'rgba(92, 16, 5, 1)',
                     'rgba(227, 74, 51, 1)',
-                    'rgba(92, 16, 5, 1)'
+                    'rgba(255, 215, 0 , 1)',
+                    'rgba(12, 92, 5, 1)'
                 ],
-                borderWidth: 1
+                borderWidth: 0.5
             }
         ]
     };
@@ -229,13 +230,13 @@ const Mapc = () => {
             {mergedData.length === 0 ? <div>Loading...</div> :
                 <div className={css.container}>
                     <span className="primaryText">
-                        Suburb Incident Insights
+                        City of Melbourne Incident History
                     </span>
-                    <MapContainer center={[-37.815, 144.953]} 
-                    zoom={13} 
-                    minZoom={12}
-                    maxZoom={14}
-                    style={{ height: '65vh' }}>
+                    <MapContainer center={[-37.815, 144.953]}
+                        zoom={13}
+                        minZoom={12}
+                        maxZoom={14}
+                        style={{ height: '65vh' }}>
                         <GeoJSON data={mergedData}
                             style={style}
                             onEachFeature={onEachSuburb}
@@ -256,6 +257,14 @@ const Mapc = () => {
 
                         </div>
                     </div>}
+
+                    <div
+                        className={css.exploreMore}
+                    >
+                        <Link to="/route" className={css.primaryButton}>
+                            Explore More Routes
+                        </Link>
+                    </div>
                 </div>
             }
 
