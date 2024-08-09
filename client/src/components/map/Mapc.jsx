@@ -6,6 +6,7 @@ import Chart from 'chart.js/auto';
 import LoadSuburbTask from '../../tasks/LoadSuburbTask'
 import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '../../utils/motion'
+import { Link } from 'react-router-dom';
 
 const Legend = () => {
     const map = useMap();
@@ -231,11 +232,11 @@ const Mapc = () => {
                     <span className="primaryText">
                         City of Melbourne Incident History
                     </span>
-                    <MapContainer center={[-37.815, 144.953]} 
-                    zoom={13} 
-                    minZoom={12}
-                    maxZoom={14}
-                    style={{ height: '65vh' }}>
+                    <MapContainer center={[-37.815, 144.953]}
+                        zoom={13}
+                        minZoom={12}
+                        maxZoom={14}
+                        style={{ height: '65vh' }}>
                         <GeoJSON data={mergedData}
                             style={style}
                             onEachFeature={onEachSuburb}
@@ -256,6 +257,14 @@ const Mapc = () => {
 
                         </div>
                     </div>}
+
+                    <div
+                        className={css.exploreMore}
+                    >
+                        <Link to="/route" className={css.primaryButton}>
+                            Explore More Routes
+                        </Link>
+                    </div>
                 </div>
             }
 

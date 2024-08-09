@@ -12,7 +12,7 @@ const Hero = () => {
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: false, amount: 0.25 }}
                 className={`innerWidth ${css.container}`}>
                 <div className={css.upperElements}>
                     <motion.span
@@ -20,7 +20,6 @@ const Hero = () => {
                         className="primaryText">
                         We Are <br /> BicycleRoute
                     </motion.span>
-
                     <motion.div
                         variants={fadeIn("left", "tween", 0.4, 1)}
                         className={css.leftside}>
@@ -51,19 +50,18 @@ const Hero = () => {
 
                 <div className={css.lowerElements}>
                     <motion.span
-                        variants={fadeIn("right", "tween", 0.3, 1)}
-                        className='secondaryText'>
-                        Make Melbourne a Safer,
+                        variants={fadeIn("right", "tween", 0.3, 1)}>
+                        Ride confidently in 
                         <br />
-                        Greener Cycling City
+                        Melbourne
                     </motion.span>
                     <motion.div
                         variants={fadeIn("left", "tween", 0.5, 1)}
                         className={css.rightside}>
-                        <span className='secondaryText'>
-                            planning through historical data
-                            <br />
-                            insights and route planning
+                        <span>
+                        Discover our 
+                        <br />
+                        safe cycling routes
                         </span>
                     </motion.div>
 

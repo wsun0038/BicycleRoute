@@ -49,7 +49,7 @@
                 justify-content: center;
             }
 
-            margin-top: 12rem;
+            margin-top: 9rem;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -60,6 +60,17 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            span {
+                @media (max-width: $sm) {
+                  font-size: 1.1rem;
+                  line-height: 40px;
+                }
+                line-height: 60px;
+                font-size: 2rem;
+                font-weight: 500;
+                padding-bottom: 1rem;
+              }
 
         }
 
